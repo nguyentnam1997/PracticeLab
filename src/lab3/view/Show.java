@@ -1,7 +1,9 @@
 package lab3.view;
 
+import lab3.entities.History;
 import lab3.entities.Worker;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Show {
@@ -25,5 +27,21 @@ public class Show {
         }
         while (true);
 
+    }
+
+    public String inputId(Scanner scanner) {
+            System.out.println("Enter code:");
+            return scanner.nextLine();
+    }
+
+    public String showInfoWorker(Worker worker) {
+        return  worker.getId() +"    " + worker.getName() + "          " + worker.getAge() + "       " + worker.getSalary();
+    }
+    public void showInfoSalary(ArrayList<History> histories) {
+        System.out.println("--------- Display Information Salary ----------");
+        System.out.println("Code    Name          Age       Salary       Status         Date");
+        for (History h: histories) {
+            System.out.println(showInfoWorker(h.getWorker()) + "       "+ h.getStatus() +"         " + h.getUpdated());
+        }
     }
 }
