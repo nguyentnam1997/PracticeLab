@@ -20,9 +20,15 @@ public class Show {
         do {
             System.out.println("Please choose: ");
             try {
-                return Integer.parseInt(scanner.nextLine());
+                int choose = Integer.parseInt(scanner.nextLine());
+                if (choose < 0 || choose > 5) {
+                    System.out.println("Invalid value");
+                    continue;
+                }
+                else return choose;
             } catch (Exception e) {
-                System.out.println("Try again!");
+                System.out.println("Exception!!!! Try again!");
+                continue;
             }
         }
         while (true);
@@ -43,5 +49,10 @@ public class Show {
         for (History h: histories) {
             System.out.println(showInfoWorker(h.getWorker()) + "       "+ h.getStatus() +"         " + h.getUpdated());
         }
+    }
+
+    public String continueOrEnd(Scanner scanner) {
+        System.out.println("Do you want to continue? (Y/N)?");
+        return scanner.nextLine();
     }
 }

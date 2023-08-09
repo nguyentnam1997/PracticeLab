@@ -30,7 +30,7 @@ public class WorkerService {
                     System.out.println("Value cannot be negative, please try again!");
                     continue;
                 }
-                worker.setSalary(worker.getSalary() + changeSalary);
+                else worker.setSalary(worker.getSalary() + changeSalary);
                 break;
             } catch (Exception e) {
                 System.out.println("Wrong value inputted, please try again!");
@@ -47,7 +47,7 @@ public class WorkerService {
                     System.out.println("Value cannot be negative, please try again!");
                     continue;
                 }
-                worker.setSalary(worker.getSalary() - changeSalary);
+                else worker.setSalary(worker.getSalary() - changeSalary);
                 break;
             } catch (Exception e) {
                 System.out.println("Wrong value inputted, please try again!");

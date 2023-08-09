@@ -51,8 +51,7 @@ public class Main {
                     show.showInfoSalary(histories);
                     break;
             }
-            System.out.println("Do you want to continue? (Y/N)?");
-            String question = scanner.nextLine();
+            String question = show.continueOrEnd(scanner);
             if (question.equalsIgnoreCase("y")) continue;
             else break;
         }
