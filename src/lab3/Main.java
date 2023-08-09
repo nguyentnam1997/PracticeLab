@@ -32,8 +32,7 @@ public class Main {
                             workerService.upSalary(scanner, w);
                             histories.add(new History(w, "UP"));
                             break;
-                        } else System.out.println("Invalid code, try again!");
-
+                        } else System.out.println("Code does not exist");
                     }
                     break;
                 case 3:
@@ -44,7 +43,7 @@ public class Main {
                             workerService.downSalary(scanner, w);
                             histories.add(new History(w, "DOWN"));
                             break;
-                        } else System.out.println("Invalid code, try again!");
+                        } else System.out.println("Code does not exist");
                     }
                     break;
                 case 4:
