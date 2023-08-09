@@ -19,8 +19,10 @@ public class Main {
             case 1:
                 Worker worker = workerService.createWorker(scanner);
                 workers.add(worker);
+                System.out.println(workers);
                 break;
             case 2:
+                workerService.upSalary(scanner, workers);
             case 3:
             case 4:
         }
