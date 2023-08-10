@@ -49,13 +49,15 @@ public class Main {
                 case 4:
                     show.showInfoSalary(histories);
                     break;
+                case 5:
+                    System.out.println("Goodbye!!!");
+                    System.exit(0);
+                    break;
             }
             String question = show.continueOrEnd(scanner);
             if (question.equalsIgnoreCase("y")) continue;
             else break;
         }
         while (true);
-
-
     }
 }

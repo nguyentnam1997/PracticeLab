@@ -12,13 +12,38 @@ public class WorkerService {
         System.out.println("------- Add Worker ---------");
         System.out.println("Enter Name:");
         String name = scanner.nextLine();
-        System.out.println("Enter Age:");
-        int age = Integer.parseInt(scanner.nextLine());         //chưa check đk
-        System.out.println("Enter Salary:");
-        double salary = Double.parseDouble(scanner.nextLine());      //chưa check đk
-        System.out.println("Enter Work location:");
-        String workPlace = scanner.nextLine();
-        return new Worker(name, age, salary, workPlace);
+        do {
+            System.out.println("Enter Age:");
+            try {
+                int age = Integer.parseInt(scanner.nextLine());
+                if (age < 18) {
+                    System.out.println("Invalid value, please try again!");
+                    continue;
+                }
+                do {
+                    System.out.println("Enter Salary:");
+                    try {
+                        double salary = Double.parseDouble(scanner.nextLine());
+                        if (salary <= 0) {
+                            System.out.println("Invalid value, please try again!");
+                            continue;
+                        }
+                        System.out.println("Enter Work location:");
+                        String workPlace = scanner.nextLine();
+                        return new Worker(name, age, salary, workPlace);
+                    }
+                     catch (Exception e) {
+                         System.out.println("Wrong value inputted, please try again!");
+                     }
+                }
+                while (true);
+            }
+            catch (Exception e) {
+                System.out.println("Wrong value inputted, please try again!");
+            }
+        }
+        while (true);
+
     }
     //Tăng lương Worker
     public void upSalary(Scanner scanner, Worker worker) {
