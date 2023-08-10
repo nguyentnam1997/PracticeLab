@@ -88,6 +88,7 @@ public class Show {
              else {
                  Exit();
              }
+             break;
          }
          while (true);
      }
