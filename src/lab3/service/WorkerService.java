@@ -46,7 +46,7 @@ public class WorkerService {
 
     }
     //Tăng lương Worker
-    public void upSalary(Scanner scanner, Worker worker) {
+    public double upSalary(Scanner scanner, Worker worker) {
         do {
             System.out.println("Enter salary want to increase:");;
             try {
@@ -55,15 +55,18 @@ public class WorkerService {
                     System.out.println("Value cannot be negative, please try again!");
                     continue;
                 }
-                else worker.setSalary(worker.getSalary() + changeSalary);
-                break;
+                else {
+                    worker.setSalary(worker.getSalary() + changeSalary);
+                    return worker.getSalary();
+                }
+                //break;
             } catch (Exception e) {
                 System.out.println("Wrong value inputted, please try again!");
             }
         }
         while (true);
     }
-    public void downSalary(Scanner scanner, Worker worker) {
+    public double downSalary(Scanner scanner, Worker worker) {
         do {
             System.out.println("Enter salary want to decrease:");;
             try {
@@ -76,8 +79,10 @@ public class WorkerService {
                     System.out.println("The value must not be greater than the current salary, plese try again!");
                     continue;
                 }
-                else worker.setSalary(worker.getSalary() - changeSalary);
-                break;
+                else {
+                    worker.setSalary(worker.getSalary() - changeSalary);
+                    return worker.getSalary();
+                }
             } catch (Exception e) {
                 System.out.println("Wrong value inputted, please try again!");
             }

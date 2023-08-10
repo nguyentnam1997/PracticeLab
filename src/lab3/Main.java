@@ -15,51 +15,52 @@ public class Main {
         ArrayList<History> histories = new ArrayList<>();
         WorkerService workerService = new WorkerService();
         Show show = new Show();
-        String checkId;
+        String checkId = "";
         int count = 0;
         do {
             show.showMenu();
             int choose = show.selectMenu(scanner);
-            switch (choose) {
-                case 1 -> {
-                    Worker worker = workerService.createWorker(scanner);
-                    workers.add(worker);
-                }
-                case 2 -> {
-                    System.out.println("------- Up Salary -------");
-                    checkId = show.inputId(scanner);
-                    count = 0;
-                    for (Worker w : workers) {
-                        if (w.getId().contains(checkId)) {
-                            workerService.upSalary(scanner, w);
-                            histories.add(new History(w, "UP"));
-                            count++;
-                            break;
-                        }
-                    }
-                    show.checkIdCode(count);
-                }
-                case 3 -> {
-                    System.out.println("------- Down Salary -------");
-                    checkId = show.inputId(scanner);
-                    count = 0;
-                    for (Worker w : workers) {
-                        if (w.getId().contains(checkId)) {
-                            workerService.downSalary(scanner, w);
-                            histories.add(new History(w, "DOWN"));
-                            count++;
-                            break;
-                        }
-                    }
-                    show.checkIdCode(count);
-                }
-                case 4 -> {
-                    show.showInfoSalary(histories);
-                }
-                case 5 -> {
-                    show.Exit();
-                }
-            }
+//            switch (choose) {
+//                case 1 -> {
+//                    Worker worker = workerService.createWorker(scanner);
+//                    workers.add(worker);
+//                }
+//                case 2 -> {
+//                    System.out.println("------- Up Salary -------");
+//                    checkId = show.inputId(scanner);
+//                    count = 0;
+//                    for (Worker w : workers) {
+//                        if (w.getId().contains(checkId)) {
+//                            workerService.upSalary(scanner, w);
+//                            histories.add(new History(w, "UP"));
+//                            count++;
+//                            break;
+//                        }
+//                    }
+//                    show.checkIdCode(count);
+//                }
+//                case 3 -> {
+//                    System.out.println("------- Down Salary -------");
+//                    checkId = show.inputId(scanner);
+//                    count = 0;
+//                    for (Worker w : workers) {
+//                        if (w.getId().contains(checkId)) {
+//                            workerService.downSalary(scanner, w);
+//                            histories.add(new History(w, "DOWN"));
+//                            count++;
+//                            break;
+//                        }
+//                    }
+//                    show.checkIdCode(count);
+//                }
+//                case 4 -> {
+//                    show.showInfoSalary(histories);
+//                }
+//                case 5 -> {
+//                    show.Exit();
+//                }
+//            }
+            show.selectOption(choose, checkId, scanner, workerService, workers, histories, count);
             String question = show.continueOrEnd(scanner);
             if (question.equalsIgnoreCase("y")) continue;
             else {

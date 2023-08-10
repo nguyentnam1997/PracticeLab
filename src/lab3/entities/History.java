@@ -7,11 +7,21 @@ public class History {
     private Worker worker;
     private String status;
     private LocalDate updated;
+    private double newSalary;
 
-    public History(Worker worker, String status) {
+    public History(Worker worker, String status, double newSalary) {
         this.worker = worker;
         this.status = status;
         this.updated = LocalDate.now();
+        this.newSalary = newSalary;
+    }
+
+    public double getNewSalary() {
+        return newSalary;
+    }
+
+    public void setNewSalary(double newSalary) {
+        this.newSalary = newSalary;
     }
 
     public Worker getWorker() {
