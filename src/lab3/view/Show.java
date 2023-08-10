@@ -76,7 +76,21 @@ public class Show {
             }
         }
     }
-
+     public void runProgram(Scanner scanner, WorkerService workerService, ArrayList<Worker> workers, ArrayList<History> histories) {
+         String checkId = "";
+         int count = 0;
+        do {
+             showMenu();
+             int choose = selectMenu(scanner);
+             selectOption(choose, checkId, scanner, workerService, workers, histories, count);
+             String question = continueOrEnd(scanner);
+             if (question.equalsIgnoreCase("y")) continue;
+             else {
+                 Exit();
+             }
+         }
+         while (true);
+     }
     public String inputId(Scanner scanner) {
             System.out.println("Enter code:");
             return scanner.nextLine();
