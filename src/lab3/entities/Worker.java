@@ -9,12 +9,13 @@ public class Worker {
     private String workPlace;
 
     public Worker(String name, int age, double salary, String workPlace) {
-        this.id = "W" + ++autoId;
+        this.id = "W " + ++autoId;
         this.name = name;
         this.age = age;
         this.salary = salary;
         this.workPlace = workPlace;
     }
+
     public String getId() {
         return id;
     }
@@ -50,14 +51,6 @@ public class Worker {
         this.workPlace = workPlace;
     }
 
-    @Override
-    public String toString() {
-        return "Worker{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", salary=" + salary +
-                ", workPlace='" + workPlace + '\'' +
-                '}';
-    }
+
+
 }
