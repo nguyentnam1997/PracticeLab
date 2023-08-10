@@ -41,18 +41,30 @@ public class Show {
     }
 
     public String showInfoWorker(Worker worker) {
-        return  worker.getId() +"    " + worker.getName() + "          " + worker.getAge() + "       " + worker.getSalary();
+        return  worker.getId() + "    " +
+                worker.getName() + "          " +
+                worker.getAge() + "       " +
+                worker.getSalary();
     }
     public void showInfoSalary(ArrayList<History> histories) {
         System.out.println("--------- Display Information Salary ----------");
         System.out.println("Code    Name          Age       Salary       Status         Date");
-        for (History h: histories) {
-            System.out.println(showInfoWorker(h.getWorker()) + "       "+ h.getStatus() +"         " + h.getUpdated());
+        for (History his: histories) {
+            System.out.println(showInfoWorker(his.getWorker()) + "       " +
+                    his.getStatus() +"         " + his.getUpdated());
         }
     }
-
+     public void checkIdCode(int count) {
+         if (count == 0) {
+             System.out.println("Code does not exist");
+         }
+     }
     public String continueOrEnd(Scanner scanner) {
         System.out.println("Do you want to continue? (Y/N)?");
         return scanner.nextLine();
+    }
+    public void Exit() {
+        System.out.println("Goodbye!!!");
+        System.exit(0);
     }
 }

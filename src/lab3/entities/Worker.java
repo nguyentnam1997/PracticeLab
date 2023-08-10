@@ -16,10 +16,6 @@ public class Worker {
         this.workPlace = workPlace;
     }
 
-    public Worker() {
-
-    }
-
     public String getId() {
         return id;
     }

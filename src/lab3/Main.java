@@ -16,47 +16,55 @@ public class Main {
         WorkerService workerService = new WorkerService();
         Show show = new Show();
         String checkId;
+        int count = 0;
         do {
             show.showMenu();
             int choose = show.selectMenu(scanner);
             switch (choose) {
-                case 1:
+                case 1 -> {
                     Worker worker = workerService.createWorker(scanner);
                     workers.add(worker);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("------- Up Salary -------");
+                    checkId = show.inputId(scanner);
+                    count = 0;
                     for (Worker w : workers) {
-                        checkId = show.inputId(scanner);
                         if (w.getId().contains(checkId)) {
                             workerService.upSalary(scanner, w);
                             histories.add(new History(w, "UP"));
+                            count++;
                             break;
-                        } else System.out.println("Code does not exist");
+                        }
                     }
-                    break;
-                case 3:
+                    show.checkIdCode(count);
+                }
+                case 3 -> {
                     System.out.println("------- Down Salary -------");
                     checkId = show.inputId(scanner);
+                    count = 0;
                     for (Worker w : workers) {
                         if (w.getId().contains(checkId)) {
                             workerService.downSalary(scanner, w);
                             histories.add(new History(w, "DOWN"));
+                            count++;
                             break;
-                        } else System.out.println("Code does not exist");
+                        }
                     }
-                    break;
-                case 4:
+                    show.checkIdCode(count);
+                }
+                case 4 -> {
                     show.showInfoSalary(histories);
-                    break;
-                case 5:
-                    System.out.println("Goodbye!!!");
-                    System.exit(0);
-                    break;
+                }
+                case 5 -> {
+                    show.Exit();
+                }
             }
             String question = show.continueOrEnd(scanner);
             if (question.equalsIgnoreCase("y")) continue;
-            else break;
+            else {
+                show.Exit();
+            }
         }
         while (true);
     }

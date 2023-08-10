@@ -72,6 +72,10 @@ public class WorkerService {
                     System.out.println("Value cannot be negative, please try again!");
                     continue;
                 }
+                else if (changeSalary > worker.getSalary()) {
+                    System.out.println("The value must not be greater than the current salary, plese try again!");
+                    continue;
+                }
                 else worker.setSalary(worker.getSalary() - changeSalary);
                 break;
             } catch (Exception e) {
