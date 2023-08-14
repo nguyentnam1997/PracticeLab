@@ -19,6 +19,6 @@ public class Main {
 
         ArrayList<Pet> pets = new ArrayList<>(Arrays.asList(pet1, pet2, pet3, pet4, pet5, pet6));
         PetService petService = new PetService();
-        petService.match(pets);
+        //petService.match(pets);
     }
 }

@@ -3,28 +3,45 @@ package Baitapthem.entities;
 import java.util.ArrayList;
 
 public class KhachHang {
-    private ArrayList<HoDan> listHoDan;
-    private ArrayList<BienLai> listBienLai;
+    private String name;
+    private String addressNumber;
+    private int meterNumberCode;
 
-
-    public KhachHang(ArrayList<HoDan> listHoDan, ArrayList<BienLai> listBienLai) {
-        this.listHoDan = listHoDan;
-        this.listBienLai = listBienLai;
+    public KhachHang(String name, String addressNumber, int meterNumberCode) {
+        this.name = name;
+        this.addressNumber = addressNumber;
+        this.meterNumberCode = meterNumberCode;
+    }
+    public String getName() {
+        return name;
     }
 
-    public ArrayList<HoDan> getListHoDan() {
-        return listHoDan;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setListHoDan(ArrayList<HoDan> listHoDan) {
-        this.listHoDan = listHoDan;
+    public String getAddressNumber() {
+        return addressNumber;
     }
 
-    public ArrayList<BienLai> getListBienLai() {
-        return listBienLai;
+    public void setAddressNumber(String addressNumber) {
+        this.addressNumber = addressNumber;
     }
 
-    public void setListBienLai(ArrayList<BienLai> listBienLai) {
-        this.listBienLai = listBienLai;
+    public int getMeterNumberCode() {
+        return meterNumberCode;
+    }
+
+    public void setMeterNumberCode(int meterNumberCode) {
+        this.meterNumberCode = meterNumberCode;
+    }
+
+    @Override
+    public String toString() {
+        return "KhachHang{" +
+                "name='" + name + '\'' +
+                ", addressNumber=" + addressNumber +
+                ", meterNumberCode=" + meterNumberCode +
+                '}';
     }
 }

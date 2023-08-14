@@ -1,24 +1,24 @@
 package Baitapthem.entities;
 
 public class BienLai {
-    private HoDan hoDan;
+    private KhachHang khachHang;
     private int oldMeterNumber;
     private int newMeterNumber;
-    private double cash;
+    private final double cash;
 
-    public BienLai(HoDan hoDan, int oldMeterNumber, int newMeterNumber) {
-        this.hoDan = hoDan;
+    public BienLai(KhachHang khachHang, int oldMeterNumber, int newMeterNumber) {
+        this.khachHang = khachHang;
         this.oldMeterNumber = oldMeterNumber;
         this.newMeterNumber = newMeterNumber;
-        this.cash = (newMeterNumber - oldMeterNumber)*750;
+        this.cash = (newMeterNumber - oldMeterNumber) * 750;
     }
 
-    public HoDan getHoDan() {
-        return hoDan;
+    public KhachHang getKhachHang() {
+        return khachHang;
     }
 
-    public void setHoDan(HoDan hoDan) {
-        this.hoDan = hoDan;
+    public void setKhachHang(KhachHang khachHang) {
+        this.khachHang = khachHang;
     }
 
     public int getOldMeterNumber() {
@@ -39,5 +39,15 @@ public class BienLai {
 
     public double getCash() {
         return cash;
+    }
+
+    @Override
+    public String toString() {
+        return "BienLai{" +
+                "khachHang=" + khachHang +
+                ", oldMeterNumber=" + oldMeterNumber +
+                ", newMeterNumber=" + newMeterNumber +
+                ", cash=" + cash +
+                '}';
     }
 }
