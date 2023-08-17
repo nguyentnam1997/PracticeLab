@@ -3,8 +3,8 @@ package lab4.entities;
 public class Manager extends Staff{
     private double responsibleSalary;
 
-    public Manager(String name, double salary, double responsibleSalary) {
-        super(name, salary);
+    public Manager(String name, double basicSalary, double finalSalary, double responsibleSalary) {
+        super(name, basicSalary, finalSalary);
         this.responsibleSalary = responsibleSalary;
     }
 

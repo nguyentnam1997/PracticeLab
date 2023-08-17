@@ -1,8 +1,8 @@
 package lab4.entities;
 
 public class AdministrativeStaff extends Staff{
-    public AdministrativeStaff(String name, double salary) {
-        super(name, salary);
+    public AdministrativeStaff(String name, double basicSalary, double finalSalary) {
+        super(name, basicSalary, finalSalary);
     }
 
     @Override
@@ -28,5 +28,15 @@ public class AdministrativeStaff extends Staff{
     @Override
     public void setBasicSalary(double basicSalary) {
         super.setBasicSalary(basicSalary);
+    }
+
+    @Override
+    public double getFinalSalary() {
+        return super.getFinalSalary();
+    }
+
+    @Override
+    public void setFinalSalary(double finalSalary) {
+        super.setFinalSalary(finalSalary);
     }
 }

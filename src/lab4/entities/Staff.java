@@ -2,14 +2,16 @@ package lab4.entities;
 
 public class Staff {
     private static int autoId;
-    private int id;
-    private String name;
-    private double basicSalary;
+    protected int id;
+    protected String name;
+    protected double basicSalary;
+    protected double finalSalary;
 
-    public Staff(String name, double basicSalary) {
+    public Staff(String name, double basicSalary, double finalSalary) {
         this.id = ++autoId;
         this.name = name;
         this.basicSalary = basicSalary;
+        this.finalSalary = finalSalary;
     }
 
     public int getId() {
@@ -30,5 +32,13 @@ public class Staff {
 
     public void setBasicSalary(double basicSalary) {
         this.basicSalary = basicSalary;
+    }
+
+    public double getFinalSalary() {
+        return finalSalary;
+    }
+
+    public void setFinalSalary(double finalSalary) {
+        this.finalSalary = finalSalary;
     }
 }

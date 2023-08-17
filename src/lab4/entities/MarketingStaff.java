@@ -4,8 +4,8 @@ public class MarketingStaff extends Staff{
     private double sales;
     private double commissionRate;
 
-    public MarketingStaff(String name, double basicSalary, double sales, double commissionRate) {
-        super(name, basicSalary);
+    public MarketingStaff(String name, double basicSalary, double finalSalary, double sales, double commissionRate) {
+        super(name, basicSalary, finalSalary);
         this.sales = sales;
         this.commissionRate = commissionRate;
     }

@@ -7,13 +7,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AdministrativeStaffServiceImpl implements IOptionService<AdministrativeStaff> {
+    public double calculateSalary(AdministrativeStaff administrativeStaff) {
+        return administrativeStaff.getBasicSalary();
+    }
     @Override
-    public void insert(Scanner scanner, ArrayList<AdministrativeStaff> administrativeStaffs) {
+    public void insert(Scanner scanner, AdministrativeStaff administrativeStaff, ArrayList<AdministrativeStaff> administrativeStaffs) {
         System.out.println("Input staff's name:");
         String name = scanner.nextLine();
         System.out.println("Input basic salary:");
-        Double salary = Double.parseDouble(scanner.nextLine());
-        administrativeStaffs.add(new AdministrativeStaff(name, salary));
+        double basicSalary = Double.parseDouble(scanner.nextLine());
+        administrativeStaffs.add(new AdministrativeStaff(name, basicSalary, calculateSalary(administrativeStaff)));
     }
 
     @Override
