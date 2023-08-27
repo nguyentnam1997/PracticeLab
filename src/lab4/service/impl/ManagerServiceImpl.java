@@ -27,7 +27,7 @@ public class ManagerServiceImpl implements IOptionService<Manager> {
         Double sales = Double.parseDouble(scanner.nextLine());
         System.out.println("Input commission rate:");
         Double commissionRate = Double.parseDouble(scanner.nextLine());
-        //managers.add(new Manager(name, basicSalary, sales, commissionRate, calculateSalary(marketingStaff)));
+        //xmanagers.add(new Manager(name, basicSalary, sales, commissionRate, calculateSalary(marketingStaff)));
     }
 
     @Override
