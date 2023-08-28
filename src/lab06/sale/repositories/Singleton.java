@@ -5,7 +5,7 @@ import lab06.sale.entities.Product;
 import java.util.List;
 import java.util.Objects;
 
-public final class Singleton {
+public class Singleton {
     public static List<Product> products = new Product().Init();
 
     public static int saveProduct(Product product) {
