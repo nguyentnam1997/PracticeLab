@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         var a = Singleton.products;
         var pro = Singleton.products.stream().filter(x -> x.getName().equals("Product1")).findAny().orElse(new Product());
-        pro.setName("BAU DUOI");
+        pro.setName("BAU DUOIiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         Singleton.saveProduct(pro);
 
         TableList tl = new TableList(3, "ID", "NAME", "DES").sortBy(0).withUnicode(true);
